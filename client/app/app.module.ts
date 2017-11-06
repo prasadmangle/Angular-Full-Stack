@@ -16,11 +16,14 @@ import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ExamsComponent } from './exams/exams.component';
+import { ExamService } from './services/exam.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     CatsComponent,
+    ExamsComponent,
     AboutComponent,
     RegisterComponent,
     LoginComponent,
@@ -38,6 +41,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AuthGuardLogin,
     AuthGuardAdmin,
     CatService,
+    ExamService,
     UserService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
