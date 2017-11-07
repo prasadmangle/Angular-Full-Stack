@@ -5,29 +5,24 @@
 <div class="card" *ngIf="!isLoading">
   <h4 class="card-header">Current exams ({{exams.length}})</h4>
   <div class="card-block">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-default">
-        <tr>
-          <th>Name</th>
-          <th>Topic</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody *ngIf="exams.length === 0">
-        <tr>
-          <td colspan="4">There are no exams in the DB. Add a new exam below.</td>
-        </tr>  
-      </tbody>
-      <tbody *ngIf="!isEditing">
-        <tr *ngFor="let exam of exams">
-          <td>{{exam.name}}</td>
-          <td>{{exam.topic}}</td>
-          <td>
-            <button class="btn btn-sm btn-warning" (click)="enableEditing(exam)"><i class="fa fa-pencil"></i> Edit</button> 
-            <button class="btn btn-sm btn-danger" (click)="deleteExam(exam)"><i class="fa fa-trash"></i> Delete</button>
-          </td>
-        </tr>  
-      </tbody>
+    <div>Exam Name</div>
+    <div *ngIf="exams.length === 0">
+        <div>
+          No exams in DB.
+        </div>  
+      </div>
+      <div *ngIf="!isEditing">
+        <div *ngFor="let exam of exams">
+          <div>
+            {{exam.name}}
+            <button class="btn btn-sm btn-warning" (click)="enableEditing(exam)"><i class="fa fa-pencil"></i></button> 
+            <button class="btn btn-sm btn-danger" (click)="deleteExam(exam)"><i class="fa fa-trash"></i></button>
+          </div>
+          <div>
+            
+        </div>  
+      </div>
+      <!--
       <tbody *ngIf="isEditing">
         <tr>
           <td colspan="4">
@@ -44,7 +39,8 @@
           </td>
         </tr>
       </tbody>
-    </table>
+    </table>-->
+  </div>
   </div>
 
 <div class="card">
